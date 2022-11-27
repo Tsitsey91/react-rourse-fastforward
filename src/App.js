@@ -3,17 +3,16 @@
 // tell React(and eventually the browser) what should appear on the
 //screen
 
+import Todo from "./components/Todo";
+
 function App() {
   return (
     //JSX code 
     <div>
       <h1>My Todos</h1>
-      <div className="card">
-        <h2>TITLE</h2>
-        <div className="actions">
-          <button className="btn">Delete</button>
-        </div>
-      </div>
+      <Todo text='Learn React' />
+      <Todo text='Master React'/>
+      <Todo text='Mop the floor' />
     </div>
   );
 }
