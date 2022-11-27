@@ -8,14 +8,22 @@
 //is a JS object which contains all the attributes added in the html
 //element(they are available as key/value pairs)
 function Todo(props) {
+
+    function deleteHandler() {
+        console.log('Clicked delete button of Todo:', props.text)
+    }
+
+
     return (
         <div className="card">
             <h2>{props.text}</h2>
             <div className="actions">
-                <button className="btn">Delete</button>
+                <button className="btn" onClick={deleteHandler}>
+                    Delete
+                </button>
             </div>
         </div>
-        )
+    )
 }
 
 export default Todo
