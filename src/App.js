@@ -3,8 +3,6 @@
 // tell React(and eventually the browser) what should appear on the
 //screen
 
-import Backdrop from "./components/Backdrop";
-import Modal from "./components/Modal";
 import Todo from "./components/Todo";
 
 function App() {
@@ -15,8 +13,6 @@ function App() {
       <Todo text='Learn React' />
       <Todo text='Master React'/>
       <Todo text='Mop the floor' />
-      <Modal/>
-      <Backdrop/>
      </div>
   );
 }

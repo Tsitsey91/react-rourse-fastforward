@@ -7,12 +7,17 @@
 //is named that way...but we can name it whatever we want)
 //is a JS object which contains all the attributes added in the html
 //element(they are available as key/value pairs)
+import {useState} from 'react';
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
+
 function Todo(props) {
 
-    function deleteHandler() {
-        console.log('Clicked delete button of Todo:', props.text)
-    }
+    const [modalIsOpen, setModalToOpen] = useState(false);
 
+    function deleteHandler() {
+        setModalToOpen(true)
+    }
 
     return (
         <div className="card">
@@ -22,6 +27,8 @@ function Todo(props) {
                     Delete
                 </button>
             </div>
+            {modalIsOpen ? <Modal/> : null}  {/*conditional rendering of Modal componnet*/}
+            {modalIsOpen && <Backdrop/>} {/*same thing with diff syntax*/}
         </div>
     )
 }
