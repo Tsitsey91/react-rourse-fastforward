@@ -4,6 +4,8 @@
  * a certain URL is typed 
  */
 
+import MeetupList from "../components/meetups/MeetupList";
+
 const Dummy_Data = [
     {
         id: 'm1',
@@ -29,11 +31,7 @@ function AllMeetupsPage() {
     return (
         <div>
             <h1>All Meetups Page</h1>
-            <ul>
-                {Dummy_Data.map(
-                    (meetup) => { return <li key={meetup.id}>{meetup.title}</li> }
-                )}
-            </ul>
+            <MeetupList meetups={Dummy_Data}/>
         </div>
     )
 }
