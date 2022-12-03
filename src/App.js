@@ -1,21 +1,38 @@
+import { Route, Switch } from "react-router-dom";
 
-//React Components = functions returning JSX, which we use to 
-// tell React(and eventually the browser) what should appear on the
-//screen
+import AllMeetupsPage from './pages/AllMeetups';
+import NewMeetupPage from './pages/NewMeetup';
+import FavoritesPage from './pages/Favorites';
 
-import Todo from "./components/Todo";
 
 function App() {
-  return (
-    //JSX code 
-    <div>
-      <h1>My Todos</h1>
-      <Todo text='Learn React' />
-      <Todo text='Master React'/>
-      <Todo text='Mop the floor' />
-     </div>
-  );
+  //domain -> localhost:3000
+  // my-page.com
+
+  return <div>
+    <Switch>
+      <Route path='/' exact={true}>
+        <AllMeetupsPage></AllMeetupsPage>
+      </Route>
+      <Route path='/new-meetup'>
+        <NewMeetupPage></NewMeetupPage>
+      </Route>
+      <Route path='/favorites'>
+        <FavoritesPage></FavoritesPage>
+      </Route>
+    </Switch>
+  </div>;
 }
 
-//we export it, to make it available outside of this file
 export default App;
+
+
+
+/* Added Routing package: react-router-dom
+
+In the end it means that we need
+to add this routing tool to our code
+so that we have this thing watching for URL changes.
+And we need to let this thing
+this tool know which component should be loaded
+as a page for which route, for which URL. */
