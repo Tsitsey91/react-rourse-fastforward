@@ -1,14 +1,16 @@
+import MeetupList from "../components/meetups/MeetupList";
+
 /** Components in this folder(Pages) are just like 
  * any other component. The only difference is that they
  * will be loaded by our routing-package as pages, when 
  * a certain URL is typed 
  */
+
 const Dummy_Data = [
     {
         id: 'm1',
         title: 'This is a first meetup',
-        image:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
+        image:'https://picsum.photos/300/300',
         address: 'Meetupstreet 5, 12345 Meetup City',
         description:
             'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
@@ -17,7 +19,7 @@ const Dummy_Data = [
         id: 'm2',
         title: 'This is a second meetup',
         image:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
+            'https://picsum.photos/200/300',
         address: 'Meetupstreet 5, 12345 Athens Yoooo',
         description:
             'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
@@ -28,12 +30,8 @@ const Dummy_Data = [
 function AllMeetupsPage() {
     return (
         <div className="container">
-            <h1 className="display-5">All Meetups Page</h1>
-            <ul className="list-group">
-                {Dummy_Data.map(
-                    (meetup) => {return <li key={meetup.id} className="list-group-item">{meetup.address}</li> }
-                )}
-            </ul>
+            <h3 className="display-7">All Meetups Page</h3>
+            <MeetupList meetups={Dummy_Data}/>
         </div>
     )
 }
