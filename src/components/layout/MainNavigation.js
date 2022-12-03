@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom"
 
+<<<<<<< Updated upstream
 function MainNavigation() {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,5 +52,29 @@ function MainNavigation() {
     //     </nav>
     // </header>
 }
+=======
+
+// SOME CHANGES HERE
+    function MainNavigation() {
+        return (
+            <header>
+                <div>React Meetups</div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to='/'>All Meetups</Link>
+                        </li>
+                        <li>
+                            <Link to='/new-meetup'>Add New Meetups</Link>
+                        </li>
+                        <li>
+                            <Link to='/favorites'>My Favorites</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        )
+    }
+>>>>>>> Stashed changes
 
 export default MainNavigation
