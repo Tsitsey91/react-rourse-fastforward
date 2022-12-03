@@ -11,24 +11,30 @@ import {useState} from 'react';
 import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
+// props are important for building re-usable componetns
+// state is important for changing the UI dynamically
+
 function Todo(props) {
 
     const [modalIsOpen, setModalToOpen] = useState(false);
 
-    function deleteHandler() {
+    function openModal() {
         setModalToOpen(true)
     }
 
+    function closeModal(){
+        setModalToOpen(false)
+    }
     return (
         <div className="card">
             <h2>{props.text}</h2>
             <div className="actions">
-                <button className="btn" onClick={deleteHandler}>
+                <button className="btn" onClick={openModal}>
                     Delete
                 </button>
             </div>
-            {modalIsOpen ? <Modal/> : null}  {/*conditional rendering of Modal componnet*/}
-            {modalIsOpen && <Backdrop/>} {/*same thing with diff syntax*/}
+            {modalIsOpen ? <Modal onCancel={closeModal} onConfirm={closeModal}/> : null}  {/*conditional rendering of Modal componnet*/}
+            {modalIsOpen && <Backdrop onClick={closeModal}/>} {/*same thing with diff syntax*/}
         </div>
     )
 }
